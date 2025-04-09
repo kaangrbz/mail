@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milletvekilleri İletişim</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+        padding-bottom: 200px;
+      }
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+      a {
+        color: #3498db;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .letter {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+      .notification {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #2ecc71;
+        color: white;
+        border-radius: 5px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>İstanbul Milletvekilleri</h1>
+      <ul>
+        <li><a href="mailto:ali.gokcek@tbmm.gov.tr">ALİ GÖKÇEK</a></li>
+        <li>
+          <a href="mailto:s.yanikomeroglu@tbmm.gov.tr"
+            >AYŞE SİBEL YANIKÖMEROĞLU</a
+          >
+        </li>
+        <li>
+          <a href="mailto:cemal.enginyurt@tbmm.gov.tr">CEMAL ENGINYURT</a>
+        </li>
+        <li><a href="mailto:erdogan.toprak@chp.org.tr">ERDOĞAN TOPRAK</a></li>
+        <li><a href="mailto:enginaltay5734@hotmail.com">ENGİN ALTAY</a></li>
+        <li><a href="mailto:fethi.acikel@chp.org.tr">FETHİ AÇIKEL</a></li>
+        <li>
+          <a href="mailto:gamzeakkus34@hotmail.com">GAMZE AKKUŞ İLGEZDİ</a>
+        </li>
+        <li><a href="mailto:gokhanzeybek@gmail.com">GÖKAN ZEYBEK</a></li>
+        <li><a href="mailto:gokhan.gunaydin@chp.org.tr">GÖKHAN GÜNAYDIN</a></li>
+        <li>
+          <a href="mailto:medyatanitim@chp.org.tr">KADRİ ENİS BERBEROĞLU</a>
+        </li>
+        <li><a href="mailto:ilhankesici@ilhankesici.org">İLHAN KESİCİ</a></li>
+        <li><a href="mailto:nimet.ozdemir@tbmm.gov.tr">NİMET ÖZDEMİR</a></li>
+        <li>
+          <a href="mailto:oguz.kaan.salici@chp.org.tr">OĞUZ KAAN SALICI</a>
+        </li>
+        <li><a href="mailto:ozgur.karabat@tbmm.gov.tr">ÖZGÜR KARABAT</a></li>
+        <li><a href="mailto:turkan.elci@tbmm.gov.tr">TÜRKAN ELÇİ</a></li>
+        <li><a href="mailto:ttaskinozer@gmail.com">TURAN TAŞKIN ÖZER</a></li>
+        <li><a href="mailto:suatozcagdas@gmail.com">SUAT ÖZÇAĞDAŞ</a></li>
+        <li><a href="mailto:y.emre@tbmm.gov.tr">YUNUS EMRE</a></li>
+        <li><a href="mailto:yukselyon@gmail.com">YÜKSEL MANSUR KILINÇ</a></li>
+        <li><a href="mailto:zeynel.emre@tbmm.gov.tr">ZEYNEL EMRE</a></li>
+      </ul>
+
+      <h1>İzmir Milletvekilleri</h1>
+      <ul>
+        <li><a href="mailto:tuncay.ozkan@chp.org.tr">AHMET TUNCAY ÖZKAN</a></li>
+        <li><a href="mailto:avdenizyucel@gmail.com">DENİZ YÜCEL</a></li>
+        <li><a href="mailto:ednan.arslan@tbmm.gov.tr">EDNAN ARSLAN</a></li>
+        <li><a href="mailto:msalihuzun@tbmm.gov.tr">MEHMET SALİH UZUN</a></li>
+        <li><a href="mailto:mahirpolat@masgumrukleme.net">MAHİR POLAT</a></li>
+        <li><a href="mailto:ratureli@gmail.com">RAHMİ AŞKIN TÜRELİ</a></li>
+        <li><a href="mailto:yuksel.taskin@chp.org.tr">YÜKSEL TAŞKIN</a></li>
+        <li>
+          <a href="mailto:sevda.erdankilic@tbmm.gov.tr">SEVDA ERDAN KILIÇ</a>
+        </li>
+        <li><a href="mailto:gokce.gokcen@chp.org.tr">GÖKÇE GÖKÇEN</a></li>
+        <li><a href="mailto:murat.bakan@chp.org.tr">MURAT BAKAN</a></li>
+      </ul>
+
+      <h1>Şanlıurfa Milletvekilleri</h1>
+      <ul>
+        <li><a href="mailto:mahmut.tanal@tbmm.gov.tr">MAHMUT TANAL</a></li>
+      </ul>
+
+      <div class="letter">
+        <h2>Mesajınız:</h2>
+        <span class="d-flex gap-3">
+          <button onclick="copyText()">Metni Kopyala</button>
+          <button style="background-color: #24aa24" onclick="renderMessage()">
+            Metni yenile
+          </button>
+        </span>
+        <p id="random-letter">Şu anda yükleniyor...</p>
+      </div>
+
+      <div class="notification" id="notification"></div>
+    </div>
+
+    <script>
+      const messages = [
+        `Sevgili Milletvekillerimiz,
+
+        Biz İzmir’de bir araya gelen, sesimizi duyurmaya çalışan öğrenciler olarak bu satırları size büyük bir umutla yazıyoruz. Mücadelemiz sürerken, adalet için verdiğiniz kararlı duruş bize her zaman cesaret verdi.
+
+        Sizi, bu direnişte yanımızda görmek, omuz omuza durmak ve birlikte sesimizi daha da yükseltmek istiyoruz. Sizden öğreneceğimiz çok şey olduğuna inanıyoruz ve bu süreci sizin öncülüğünüzle daha güçlü bir hale getirmek istiyoruz.
+
+        İzmir’e gelip bizimle olmanız, sadece bize değil, bu mücadeleye gönül veren herkese moral olacak. Kalpten inanıyoruz ki birlikte çok daha güçlü olacağız.
+
+        Sizi aramızda görmeyi gerçekten çok istiyoruz. Şimdiden varlığınız için teşekkür ederiz.
+
+        Sevgi ve dayanışmayla,
+        İzmirli Öğrenciler
+
+        İletişim: izmirogrencileri@gmail.com`,
+
+        `Sayın Milletvekillerimiz,
+
+        İzmir'de bir araya gelen öğrenciler olarak, haklı mücadelemizi daha güçlü bir şekilde sürdürebilmek adına size bu mektubu yazıyoruz. Adalet yolunda sergilediğiniz kararlı duruş bizlere her zaman ilham verdi, cesaret aşıladı.
+
+        Bu süreçte sizi yanımızda görmek, birlikte omuz omuza durmak bizim için çok kıymetli. Varlığınız mücadelemize büyük bir güç katacak. Sizden öğrenecek çok şeyimiz olduğunu düşünüyoruz.
+
+        İzmir’e gelip bizlerle buluşmanız, yalnızca bize değil, bu haklı davaya inanan herkese moral olacaktır. Birlikte çok daha güçlü olabileceğimize yürekten inanıyoruz.
+
+        Şimdiden desteğiniz ve ilginiz için sonsuz teşekkürler.
+
+        Dayanışmayla,
+        İzmirli Öğrenciler
+
+        İletişim: izmirogrencileri@gmail.com`,
+
+        `Saygıdeğer Milletvekillerimiz,
+
+        İzmir'de sesimizi duyurmaya çalışan gençler olarak, size büyük bir umutla ulaşmak istedik. Adalet için verdiğiniz mücadele ve tavrınız, biz öğrenciler için her zaman yol gösterici oldu.
+
+        Bu süreçte sizinle yan yana durmak, omuz omuza yürümek istiyoruz. Mücadelemizi daha güçlü kılmak, sizden feyz almak en büyük arzularımızdan biri.
+
+        İzmir’de bizi ziyaret etmeniz, moral ve motivasyonumuzu yükseltecek, sesimizi daha da duyurabilir hale getirecek. İnancımız tam ki birlikte daha güçlü olabiliriz.
+
+        Desteğiniz için şimdiden minnettarız.
+
+        Sevgiyle,
+        İzmirli Öğrenciler
+
+        İletişim: izmirogrencileri@gmail.com`,
+        `Değerli Milletvekillerimiz,
+
+        İzmir’de hak mücadelesi veren öğrenciler olarak size büyük bir içtenlikle ulaşıyoruz. Sizin kararlılığınız ve adalet mücadeleniz, bizim yolumuzu aydınlatıyor.
+
+        Sizi aramızda görmek, bizlere hem güç verecek hem de bu mücadeleyi daha da ileriye taşıyacak. Bilginizden, tecrübenizden faydalanmak istiyoruz.
+
+        Eğer İzmir’e gelip bizimle buluşursanız, sadece biz öğrenciler değil, tüm destekçilerimiz için büyük bir moral kaynağı olacaksınız. Sizle birlikte sesimiz daha gür çıkacak.
+
+        Varlığınız için şimdiden teşekkür ederiz.
+
+        İçten sevgi ve dayanışmayla,
+        İzmirli Öğrenciler
+
+        İletişim: izmirogrencileri@gmail.com`,
+        `Sayın Milletvekillerimiz,
+
+        İzmir’de bir araya gelen öğrenciler olarak, sizi yanımızda görmeyi çok istiyoruz. Adalet uğruna verdiğiniz mücadele, biz gençlere umut ve cesaret veriyor.
+
+        Bu süreçte omuz omuza durmak, sizinle beraber hareket etmek, bizim için çok değerli. Mücadelemizi sizin öncülüğünüzle daha da büyütmek istiyoruz.
+
+        İzmir’e gelip bizimle bir araya gelmeniz, sadece bize değil, mücadelemize inanan herkese moral olacaktır. Sizinle daha güçlü olacağımıza inanıyoruz.
+
+        Teşekkürlerimizi ve sevgimizi iletiyoruz.
+
+        Dayanışmayla,
+        İzmirli Öğrenciler
+
+        İletişim: izmirogrencileri@gmail.com`,
+        `Sayın Milletvekillerimiz,
+
+        Bizler İzmir’de adalet arayışı içinde olan öğrencileriz. Mücadelemizi sürdürürken, yıllardır sergilediğiniz kararlı duruş bizlere ilham oluyor.
+
+        Bu süreçte sizi yanımızda görmek, mücadelemize güç katacaktır. Sizinle birlikte dayanışma içinde olmak, biz öğrenciler için büyük bir moral olacaktır.
+
+        İzmir’e gelip bizimle buluşmanız, sadece fiziki bir destek değil, aynı zamanda yüreklerimizi birleştiren büyük bir adım olacaktır.
+
+        Size şimdiden teşekkür eder, yolumuzun kesişmesini yürekten dileriz.
+
+        Sevgi ve umutla,
+        İzmirli Öğrenciler
+
+        İletişim: izmirogrencileri@gmail.com`,
+      ];
+
+      const renderMessage = () => {
+        // Rastgele mesaj seçimi
+        const randomMessage =
+          messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById('random-letter').innerText = randomMessage;
+
+        const notification = document.getElementById('notification');
+        notification.innerHTML = "Metin yenilendi!";
+        notification.style.display = 'block';
+        setTimeout(() => (notification.style.display = 'none'), 500);
+      };
+
+      renderMessage();
+
+      // Metni kopyalama fonksiyonu
+      function copyText() {
+        const text = document.getElementById('random-letter').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          const notification = document.getElementById('notification');
+          notification.innerHTML = "Metin kopyalandı!";
+          notification.style.display = 'block';
+          setTimeout(() => (notification.style.display = 'none'), 2000); // 2 saniye sonra mesaj kaybolur
+        });
+      }
+    </script>
+  </body>
+</html>
