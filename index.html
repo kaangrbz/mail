@@ -58,65 +58,26 @@
   </head>
   <body>
     <div class="container">
-      <h1>İstanbul Milletvekilleri</h1>
-      <ul>
-        <li><a href="mailto:ali.gokcek@tbmm.gov.tr">ALİ GÖKÇEK</a></li>
-        <li>
-          <a href="mailto:s.yanikomeroglu@tbmm.gov.tr"
-            >AYŞE SİBEL YANIKÖMEROĞLU</a
-          >
-        </li>
-        <li>
-          <a href="mailto:cemal.enginyurt@tbmm.gov.tr">CEMAL ENGINYURT</a>
-        </li>
-        <li><a href="mailto:erdogan.toprak@chp.org.tr">ERDOĞAN TOPRAK</a></li>
-        <li><a href="mailto:enginaltay5734@hotmail.com">ENGİN ALTAY</a></li>
-        <li><a href="mailto:fethi.acikel@chp.org.tr">FETHİ AÇIKEL</a></li>
-        <li>
-          <a href="mailto:gamzeakkus34@hotmail.com">GAMZE AKKUŞ İLGEZDİ</a>
-        </li>
-        <li><a href="mailto:gokhanzeybek@gmail.com">GÖKAN ZEYBEK</a></li>
-        <li><a href="mailto:gokhan.gunaydin@chp.org.tr">GÖKHAN GÜNAYDIN</a></li>
-        <li>
-          <a href="mailto:medyatanitim@chp.org.tr">KADRİ ENİS BERBEROĞLU</a>
-        </li>
-        <li><a href="mailto:ilhankesici@ilhankesici.org">İLHAN KESİCİ</a></li>
-        <li><a href="mailto:nimet.ozdemir@tbmm.gov.tr">NİMET ÖZDEMİR</a></li>
-        <li>
-          <a href="mailto:oguz.kaan.salici@chp.org.tr">OĞUZ KAAN SALICI</a>
-        </li>
-        <li><a href="mailto:ozgur.karabat@tbmm.gov.tr">ÖZGÜR KARABAT</a></li>
-        <li><a href="mailto:turkan.elci@tbmm.gov.tr">TÜRKAN ELÇİ</a></li>
-        <li><a href="mailto:ttaskinozer@gmail.com">TURAN TAŞKIN ÖZER</a></li>
-        <li><a href="mailto:suatozcagdas@gmail.com">SUAT ÖZÇAĞDAŞ</a></li>
-        <li><a href="mailto:y.emre@tbmm.gov.tr">YUNUS EMRE</a></li>
-        <li><a href="mailto:yukselyon@gmail.com">YÜKSEL MANSUR KILINÇ</a></li>
-        <li><a href="mailto:zeynel.emre@tbmm.gov.tr">ZEYNEL EMRE</a></li>
-      </ul>
-
-      <h1>İzmir Milletvekilleri</h1>
-      <ul>
-        <li><a href="mailto:tuncay.ozkan@chp.org.tr">AHMET TUNCAY ÖZKAN</a></li>
-        <li><a href="mailto:avdenizyucel@gmail.com">DENİZ YÜCEL</a></li>
-        <li><a href="mailto:ednan.arslan@tbmm.gov.tr">EDNAN ARSLAN</a></li>
-        <li><a href="mailto:msalihuzun@tbmm.gov.tr">MEHMET SALİH UZUN</a></li>
-        <li><a href="mailto:mahirpolat@masgumrukleme.net">MAHİR POLAT</a></li>
-        <li><a href="mailto:ratureli@gmail.com">RAHMİ AŞKIN TÜRELİ</a></li>
-        <li><a href="mailto:yuksel.taskin@chp.org.tr">YÜKSEL TAŞKIN</a></li>
-        <li>
-          <a href="mailto:sevda.erdankilic@tbmm.gov.tr">SEVDA ERDAN KILIÇ</a>
-        </li>
-        <li><a href="mailto:gokce.gokcen@chp.org.tr">GÖKÇE GÖKÇEN</a></li>
-        <li><a href="mailto:murat.bakan@chp.org.tr">MURAT BAKAN</a></li>
-      </ul>
-
-      <h1>Şanlıurfa Milletvekilleri</h1>
-      <ul>
-        <li><a href="mailto:mahmut.tanal@tbmm.gov.tr">MAHMUT TANAL</a></li>
-      </ul>
+        
+        <h2>Bilgilendirme</h2>
+        <p>Aşağıdaki linklerden birine tıklanıldığında konu, mesaj ve mail adresi alanları otomatik olarak doldurulacaktır. Eğer bir problem olursa aşağıdaki butonları kullanarak kullanabilirsiniz </p>
+      <table cellpadding="5">
+        <thead>
+            <th>Şehir</th>
+            <th>İsim</th>
+            <th>Mail adresi</th>
+        </thead>
+        <tbody id="mails"></tbody>
+      </table>
 
       <div class="letter">
-        <h2>Mesajınız:</h2>
+        <div class="notification" id="notification"></div>
+        <h2>Konu:</h2>
+        
+        <p>İzmir’deki Direnişimizde Sizi Yanımızda Görmek İstiyoruz</p>
+        <button onclick="copyText('İzmir’deki Direnişimizde Sizi Yanımızda Görmek İstiyoruz')">Konuyu Kopyala</button>
+
+        <h2>Mesaj:</h2>
         <span class="d-flex gap-3">
           <button onclick="copyText()">Metni Kopyala</button>
           <button style="background-color: #24aa24" onclick="renderMessage()">
@@ -126,10 +87,167 @@
         <p id="random-letter">Şu anda yükleniyor...</p>
       </div>
 
-      <div class="notification" id="notification"></div>
     </div>
 
     <script>
+      const mails = [
+        {
+          city: 'İstanbul',
+          name: 'ALİ GÖKÇEK',
+          mail: 'ali.gokcek@tbmm.gov.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'AYŞE SİBEL YANIKÖMEROĞLU',
+          mail: 's.yanikomeroglu@tbmm.gov.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'CEMAL ENGINYURT',
+          mail: 'cemal.enginyurt@tbmm.gov.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'ERDOĞAN TOPRAK',
+          mail: 'erdogan.toprak@chp.org.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'ENGİN ALTAY',
+          mail: 'enginaltay5734@hotmail.com',
+        },
+        {
+          city: 'İstanbul',
+          name: 'FETHİ AÇIKEL',
+          mail: 'fethi.acikel@chp.org.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'GAMZE AKKUŞ İLGEZDİ',
+          mail: 'gamzeakkus34@hotmail.com',
+        },
+        {
+          city: 'İstanbul',
+          name: 'GÖKAN ZEYBEK',
+          mail: 'gokhanzeybek@gmail.com',
+        },
+        {
+          city: 'İstanbul',
+          name: 'GÖKHAN GÜNAYDIN',
+          mail: 'gokhan.gunaydin@chp.org.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'KADRİ ENİS BERBEROĞLU',
+          mail: 'medyatanitim@chp.org.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'İLHAN KESİCİ',
+          mail: 'ilhankesici@ilhankesici.org',
+        },
+        {
+          city: 'İstanbul',
+          name: 'NİMET ÖZDEMİR',
+          mail: 'nimet.ozdemir@tbmm.gov.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'OĞUZ KAAN SALICI',
+          mail: 'oguz.kaan.salici@chp.org.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'ÖZGÜR KARABAT',
+          mail: 'ozgur.karabat@tbmm.gov.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'TÜRKAN ELÇİ',
+          mail: 'turkan.elci@tbmm.gov.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'TURAN TAŞKIN ÖZER',
+          mail: 'ttaskinozer@gmail.com',
+        },
+        {
+          city: 'İstanbul',
+          name: 'SUAT ÖZÇAĞDAŞ',
+          mail: 'suatozcagdas@gmail.com',
+        },
+        {
+          city: 'İstanbul',
+          name: 'YUNUS EMRE',
+          mail: 'y.emre@tbmm.gov.tr',
+        },
+        {
+          city: 'İstanbul',
+          name: 'YÜKSEL MANSUR KILINÇ',
+          mail: 'yukselyon@gmail.com',
+        },
+        {
+          city: 'İstanbul',
+          name: 'ZEYNEL EMRE',
+          mail: 'zeynel.emre@tbmm.gov.tr',
+        },
+        {
+          city: 'İzmir',
+          name: 'AHMET TUNCAY ÖZKAN',
+          mail: 'tuncay.ozkan@chp.org.tr',
+        },
+        {
+          city: 'İzmir',
+          name: 'DENİZ YÜCEL',
+          mail: 'avdenizyucel@gmail.com',
+        },
+        {
+          city: 'İzmir',
+          name: 'EDNAN ARSLAN',
+          mail: 'ednan.arslan@tbmm.gov.tr',
+        },
+        {
+          city: 'İzmir',
+          name: 'MEHMET SALİH UZUN',
+          mail: 'msalihuzun@tbmm.gov.tr',
+        },
+        {
+          city: 'İzmir',
+          name: 'MAHİR POLAT',
+          mail: 'mahirpolat@masgumrukleme.net',
+        },
+        {
+          city: 'İzmir',
+          name: 'RAHMİ AŞKIN TÜRELİ',
+          mail: 'ratureli@gmail.com',
+        },
+        {
+          city: 'İzmir',
+          name: 'YÜKSEL TAŞKIN',
+          mail: 'yuksel.taskin@chp.org.tr',
+        },
+        {
+          city: 'İzmir',
+          name: 'SEVDA ERDAN KILIÇ',
+          mail: 'sevda.erdankilic@tbmm.gov.tr',
+        },
+        {
+          city: 'İzmir',
+          name: 'GÖKÇE GÖKÇEN',
+          mail: 'gokce.gokcen@chp.org.tr',
+        },
+        {
+          city: 'İzmir',
+          name: 'MURAT BAKAN',
+          mail: 'murat.bakan@chp.org.tr',
+        },
+        {
+          city: 'Şanlıurfa',
+          name: 'MAHMUT TANAL',
+          mail: 'mahmut.tanal@tbmm.gov.tr',
+        },
+      ];
+
       const messages = [
         `Sevgili Milletvekillerimiz,
 
@@ -219,26 +337,57 @@
         İletişim: izmirogrencileri@gmail.com`,
       ];
 
-      const renderMessage = () => {
+      let subject = `İzmir’deki Direnişimizde Sizi Yanımızda Görmek İstiyoruz`;
+
+      const renderMails = () => {
+        const mailsTag = document.querySelector('#mails');
+        let html = '';
+        mails.forEach(item => {
+            let message = renderMessage('return');
+            let link = `mailto:${item.mail}?subject=${subject}&body=${message}`;
+
+            html += `
+                <tr>
+                    <td>${item.city}</td>
+                    <td><a href="${link}">${item.name}</a></td>
+                    <td>${item.mail}</td>
+                </tr>
+            `;
+        })
+
+        mailsTag.innerHTML = html;
+      }
+
+      const renderMessage = (type = 'default') => {
         // Rastgele mesaj seçimi
         const randomMessage =
           messages[Math.floor(Math.random() * messages.length)];
         document.getElementById('random-letter').innerText = randomMessage;
 
+        if (type === 'return') {
+            return randomMessage;
+        }
+
         const notification = document.getElementById('notification');
-        notification.innerHTML = "Metin yenilendi!";
+        notification.innerHTML = 'Metin yenilendi!';
         notification.style.display = 'block';
         setTimeout(() => (notification.style.display = 'none'), 500);
+
+        
       };
 
+
       renderMessage();
+      renderMails()
 
       // Metni kopyalama fonksiyonu
-      function copyText() {
-        const text = document.getElementById('random-letter').innerText;
+      function copyText(_text = null) {
+
+        const text = _text || document.getElementById('random-letter').innerText;
+
         navigator.clipboard.writeText(text).then(() => {
           const notification = document.getElementById('notification');
-          notification.innerHTML = "Metin kopyalandı!";
+          notification.innerHTML = 'Metin kopyalandı!';
           notification.style.display = 'block';
           setTimeout(() => (notification.style.display = 'none'), 2000); // 2 saniye sonra mesaj kaybolur
         });
