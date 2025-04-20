@@ -344,13 +344,14 @@
         let html = '';
         mails.forEach((item) => {
           let message = renderMessage('return');
-          let link = `mailto:${item.mail}?subject=${subject}&body=${message}`;
+          let link1 = `mailto:${item.mail}?subject=${subject}&body=${message}`;
+          let link2 = `mailto:${item.mail}`;
 
           html += `
                 <tr>
                     <td>${item.city}</td>
-                    <td><a href="${link}">${item.name}</a></td>
-                    <td>${item.mail}</td>
+                    <td><a href="${link1}">${item.name}</a></td>
+                    <td><a href="${link2}">${item.mail}</a></td>
                 </tr>
             `;
         });
